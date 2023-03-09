@@ -1,0 +1,23 @@
+.footer
+{
+    position: absolute;
+    width: 100%;
+    box-shadow: 0px 0px 2px 1px #cacaca;
+    display: flex;
+    justify-content: space-evenly;
+    padding:3px;
+    bottom: 0;
+}
+
+.footer__button
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__button__img
+{
+    width: 15px;
+    height: 15px;
+}
