@@ -1,18 +1,52 @@
-body{
-    font-family: 'Klee One', sans-serif;
-    font-size: 15px;
+
+
+.background{
+    position: absolute;
+    display: inline-block; /* O cualquier otro valor para el elemento contenedor */
+    width: 100%;
     min-height: 100vh;
+    line-height: 0; /*Con esto arreglo que el div sea un poco mas grande.*/
+  }
+
+
+  .background:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.1) 100%);
+  }
+
+
+
+  .background img {
     position: relative;
-    padding-bottom: 90px;
-}
+    width: 100%;
+    min-height: 100vh;
+    object-fit: cover;
+    bottom: 0;
+    background-position: center center;
+
+  }
+
+
+
+
+
+
+
+
 
 .header{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 40px;
+    padding-left: 40px;
 
 }
 
@@ -21,6 +55,12 @@ body{
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
+}
+
+.header__text
+{
+    color: white;
+    font-weight: bold;
 }
 
 .TextSocial{
@@ -34,6 +74,11 @@ body{
     text-align: center;
 }
 
+.main
+{
+    position: relative;
+}
+
 .main__buttons
 {
 
@@ -44,25 +89,9 @@ body{
     text-align: center;
 }
 
-.button{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 80%;
-    height: 40px;  
-    border: 1px solid black;
-    margin-bottom: 20px;
-    border-radius: 9px;
-    border: 1px solid gray;
-
-}
-
-.button__img
+.button
 {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 30px;
-    height: 30px;
+    margin-bottom: 15px;
 }
+
 
