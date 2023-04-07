@@ -1,12 +1,12 @@
 window.addEventListener("load",  function(event) {
 
-LoadFooter();
+LoadHeader();
 LoadEventos();
 
 }
 );
 
-function LoadFooter()
+function LoadHeader()
 {
     //#region FOOTER
     // Obtener la referencia al elemento HTML donde se cargará el footer
@@ -30,11 +30,11 @@ function LoadFooter()
             const btnPerfil = document.getElementById('btnPerfil');
 
             btnCooking.addEventListener("click", function() {
-            window.location.href = "/Cocina/cocina.html";
+            window.location.href = "file:///android_asset/Pages/Cocina/cocina.html";
           });
 
             btnLista.addEventListener("click", function() {
-            window.location.href = "/Cocina/cocina.html";
+            window.location.href = "file:///android_asset/Pages/Login/login.html";
           });
 
           btnPerfil.addEventListener("click", function() {
@@ -55,17 +55,42 @@ function LoadFooter()
 }
 
 function LoadEventos()
-{
-var boton = document.getElementById("btnSearch");
+    {
+      var mainScreen= document.getElementById("mainScreen");
+      var searchScreen= document.getElementById("searchScreen");
+      var footer= document.getElementById("footer");
+      var body= document.getElementById("body");
 
-    boton.addEventListener("click", function() {
-        Android.performClick();
 
+      ShowSearchScreen(mainScreen,searchScreen,footer,body);
+      CloseSearchScreen(mainScreen,searchScreen,footer,body);
+    }
 
-    });
+    function ShowSearchScreen(mainScreen,searchScreen,footer,body)
+    {
 
-    // your code here
-}
+      var boton = document.getElementById("buttonRecetas");
+      boton.addEventListener("click", function() {
+
+        mainScreen.style.display ="none";
+        searchScreen.style.display ="block"
+        footer.style.display ="none";
+        body.style.paddingBottom="0vh"
+      });
+    }
+
+    function CloseSearchScreen(mainScreen,searchScreen,footer,body)
+    {
+      var boton = document.getElementById("searchScreen__header__button");
+      boton.addEventListener("click", function() {
+
+        mainScreen.style.display ="block";
+        searchScreen.style.display ="none"
+        footer.style.display ="block";
+        body.style.paddingBottom="5vh"
+      });
+
+    }
 
 
 

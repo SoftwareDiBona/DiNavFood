@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DiNavFood</string>
+    <string name="url_pages">file:///android_asset/Pages/</string>
 </resources>

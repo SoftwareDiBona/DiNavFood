@@ -1,41 +1,275 @@
-body{
-    font-family: 'Klee One', sans-serif;
-    font-size: 15px;
-    min-height: 100vh;
-    position: relative;
-    padding-bottom: 90px;
-}
+
+    .background{
+        position: absolute;
+        display: inline-block; /* O cualquier otro valor para el elemento contenedor */
+        width: 100%;
+        min-height: 100vh;
+        height: 100%;
+        line-height: 0; /*Con esto arreglo que el div sea un poco mas grande.*/
+      }
+
+
+      .background:after {
+        content: "";
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.1) 100%);
+
+      }
+
+
+
+      .background img {
+        position: fixed;
+        width: 100%;
+        min-height: 100vh;
+        object-fit: cover;
+        bottom: 0;
+      }
+
 
 .header{
+    height: auto;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     text-align: center;
-    height: 140px;
     padding-left: 20px;
     padding-right: 20px;
 }
 
-
-.button{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 100%;
-    height: 40px;  
-    border: 1px solid black;
-    margin-bottom: 20px;
-    border-radius: 9px;
-    border: 1px solid gray;
-
+.header__text
+{
+    margin-top: 30px;
 }
 
-.button__img
+
+main
 {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
+    position: relative;
+}
+
+.cards
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 300px;
+}
+
+.card
+{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: left;
+    width: 70%;
+    height: auto;
+    background: rgb(224,169,28);
+    background: linear-gradient(90deg, rgba(224,169,28,1) 4%, rgba(217,157,36,1) 47%, rgba(207,131,51,1) 96%);
+
+    /*background: transparent;*/
+    border-radius: 8px;
+    backdrop-filter: blur(15px);
+}
+
+/*.card::after{
+    content: "";
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    background-color: rgb(32, 218, 162);
+    width: 50px;
+    height: 50px;
+    right: -2px;
+    top: -2px;
+    position: absolute;
+
+}
+*/
+.card__icon
+{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 96px;
+    top: 13px;
+}
+
+.card__icon__img
+{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
     width: 30px;
     height: 30px;
 }
+
+.card__header
+{
+    max-width: fit-content;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+
+.card__header--sopa::after
+{
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    right: -34px;
+    width: 25px;
+    height: 31px;
+    background-image: url("file:///android_asset/Recursos/Images/fire.png");
+    background-size:cover;
+}
+
+.card__header--heladera::after
+{
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    right: -40px;
+    width: 35px;
+    height: 35px;
+    background-image: url("file:///android_asset/Recursos/Images/ice.png");
+    background-size:cover;
+}
+
+.card__description
+{
+    font-family: 'Dosis', sans-serif;
+}
+
+.mainScreen
+{
+
+}
+
+.searchScreen
+{
+    position: relative;
+    display: none;
+
+}
+
+.searchScreen__main
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.searchScreen__main__text
+{
+
+}
+
+.searchScreen__header{
+    width: auto;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgb(224,169,28);
+background: linear-gradient(90deg, rgba(224,169,28,1) 4%, rgba(217,157,36,1) 47%, rgba(207,131,51,1) 96%);
+
+}
+
+
+.searchScreen__header__button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+}
+
+.searchScreen__header__button__img
+{
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    border:2px solid white;
+
+}
+
+.searchScreen__header__form
+{
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 70%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    padding-left: 40px;
+}
+
+.searchScreen__header__form::before
+{
+    content: "";
+    position: absolute;
+    left: 10px;
+    width: 27px;
+    height: 27px;
+    background-image: url("file:///android_asset/Recursos/Images/search.svg");
+    background-size:cover;
+}
+
+.searchScreen__header__form__input{
+    width: 100%;
+    border: none;
+    outline: none;
+    background:none;
+}
+
+.searchScreen__main
+{
+    padding: 20px;
+}
+
+.searchScreen__main__item
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.imgContainer
+{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.imgContainer__img
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 

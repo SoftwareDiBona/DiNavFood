@@ -2,9 +2,20 @@ body
 {
     position: relative;
     min-height: 100vh;
-    font-family: 'Klee One', sans-serif;
-    font-size: 15px;
     padding-bottom: 5vh;
+    color: white;
+}
+
+h1,h2
+{
+    font-family: 'Bebas Neue', cursive;
+}
+
+p
+{
+        font-size: 18px;
+        font-family: 'Dosis', sans-serif;
+
 }
 
 .button{
